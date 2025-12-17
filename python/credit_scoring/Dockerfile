@@ -1,15 +1,16 @@
 # --- Stage 1: Builder ---
 # Use a slim Python base imagen to reduce the size.
-FROM python:3.11-slim as builder
+FROM python:3.11-slim AS builder
 
 # Environment variables to optimize
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
+# Working directory in the container
 WORKDIR /app
 
 # Copy the requirements file from its original location 
-COPY requirements.txt .
+COPY python/credit_scoring/requirements.txt ./requirements.txt
 
 # Install dependencies 
 RUN pip install --no-cache-dir --upgrade pip && \

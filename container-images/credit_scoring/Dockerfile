@@ -1,10 +1,10 @@
 # --- Stage 1: Build ---
 # We use a slim Python base image to reduce the image size.
-FROM python:3.11-slim as builder
+FROM python:3.11-slim AS builder
 
 # Environment variables for optimization
-ENV PYTHONDONTWRITEBYTECODE 1
-ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
+ENV PYTHONUNBUFFERED=1
 
 # Working directory inside the container
 WORKDIR /app
