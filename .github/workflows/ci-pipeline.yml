@@ -1,0 +1,24 @@
+name: Pipeline CI/CD MLOps
+
+on:
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Repositories
+        uses: actions/checkout@v4 
+
+      - name: SetUp Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.7'
+
+      - name: Install requirements
+        run: pip install -r ./python/credit_scoring/requirements.txt
+      
+      - name: Run tests
+        run: python -m pytest ./tests/test_model_creation.py
+      
