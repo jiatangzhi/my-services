@@ -1,3 +1,7 @@
 *.venv/
 *venv/
 *.DS_Store
+datasets/german_credit_risk_v1.0.0_training/german_credit_risk.csv
+**/__pycache__
+.dvc/cache/
+.pytest_cache/

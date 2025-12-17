@@ -1,0 +1,4 @@
+[core]
+    remote = my_services_storage
+['remote "my_services_storage"']
+    url = https://dagshub.com/jiatangzhi/my_services.dvc
