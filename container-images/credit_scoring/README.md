@@ -146,12 +146,12 @@ The CI/CD pipeline is managed via Cloud Build.
 The file `ops/cloudbuild-credit_scoring_service.yaml` automates the following steps:
 
 1. **Build:** Builds the Docker image using an optimized multi-stage `Dockerfile`.
-2. **Push:** Pushes the image to `Artifact Registry` (us-central1-docker.pkg.dev/...).
+2. **Push:** Pushes the image to `Artifact Registry` (europe-southwest1-docker.pkg.dev/...).
 3. **Deploy:** Deploys the new image to Cloud Run as a managed service.
 
 ### Deployment Configuration
 
-- **Region:** `us-central1`
+- **Region:** `europe-southwest1`
 - **Authentication:** `--allow-unauthenticated`
 - **Memory:** `1Gi`
 - **Port:** `8080`
